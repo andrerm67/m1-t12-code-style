@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class DepositCalculator {
-    double сalculateComplexPercent(double amount, double yearRate, int period ) {
+    double сalculateComplexPercent(double amount, double yearRate, int period ) { //лишний пробел перед закрывающей скобкой
         double pay = amount * Math.pow((1 + yearRate / 12), 12 * period); //лишняя пустая сторока после вычислений
 
         return round(pay, 2);
