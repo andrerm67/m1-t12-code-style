@@ -6,15 +6,15 @@ public class DepositCalculator {
         return roundDecimalPlace(pay, 2);
     }
 
-    double сalculateSimplePercent(double amount, double yearRate, int period) { //в названии метода осталась русская "с"
+    double calculateSimplePercent(double amount, double yearRate, int period) { //в названии метода осталась русская "с"
         return roundDecimalPlace(amount + amount * yearRate * period, 2);
     }
 
     double roundDecimalPlace (double value, int places) {
-        double scaLe = Math.pow(10, places); // в scaLe - осталась большая буква "L" в середине слова
+        double scale = Math.pow(10, places); // в scaLe - осталась большая буква "L" в середине слова
         /*после переименования переменной, нужно изменить её и в вызовах
          + ещё заметила: знак умножения "*" тоже надо пробелами выделить */
-        return Math.round(value*ScaLe) / ScaLe;
+        return Math.round(value * scale) / scale;
     }
 
     void resultDeposit() {
