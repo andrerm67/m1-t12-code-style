@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class DepositCalculator {
     double сalculateComplexPercent(double amount, double yearRate, int period ) {
-        double pay = amount * Math.pow((1 + yearRate / 12), 12 * period);
+        double pay = amount * Math.pow((1 + yearRate / 12), 12 * period); //лишняя пустая сторока после вычислений
 
         return round(pay, 2);
     }
@@ -10,9 +10,12 @@ public class DepositCalculator {
     double сalculateSimplePercent(double amount, double yearRate, int period) {
         return round(amount + amount * yearRate * period, 2);
     }
-
+    //название метода лучше более детализировать (например roundDecimalPlace - округление десятичных знаков),
+    // с текущим названием метода может выйти путаница со стандартным математическим методом округления
     double round (double value, int places) {
-        double ScaLe = Math.pow(10, places);
+        /*название переменных должно быть в формате lowerCamelCase -
+        в ScaLe - намешаны прописные и строчные буквы, а должны быть все маленькие*/
+        double ScaLe = Math.pow(10, places); // здесь тоже лишняя пустая строка после вычисления
 
         return Math.round(value*ScaLe) / ScaLe;
     }
@@ -20,7 +23,7 @@ public class DepositCalculator {
     void resultDeposit() {
         int period;
         int action;
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); //тут пустая строка после объявления переменных добавлена правильно
 
         System.out.println("Введите сумму вклада в рублях:");
         int amount = scanner.nextInt();
@@ -33,7 +36,9 @@ public class DepositCalculator {
 
         double outputVariable = 0;
 
+        /*сalculateSimplePercent и сalculateComplexPercent - первая буква "с" - русская, лучше исправить на латиницу*/
         if (action == 1){
+            /*знак "=" должен быть выделен пробелами с двух сторон */
             outputVariable= сalculateSimplePercent(amount, 0.06, period);
         } else if (action == 2) {
             outputVariable = сalculateComplexPercent(amount, 0.06, period);
@@ -45,3 +50,6 @@ public static void main(String[] args) {
         new DepositCalculator().resultDeposit();
     }
 }
+
+/* не знаю где написать, поэтому напишу здесь. Нужно удалить файл calculate_deposit.java из репозитория,
+ тогда появится возможность запустить этот код */
