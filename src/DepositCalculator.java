@@ -11,8 +11,6 @@ public class DepositCalculator {
     }
 
     double roundDecimalPlace (double value, int places) {
-        /*название переменных должно быть в формате lowerCamelCase -
-        в ScaLe - намешаны прописные и строчные буквы, а должны быть все маленькие +*/ 
         double scaLe = Math.pow(10, places); // в scaLe - осталась большая буква "L" в середине слова
         /*после переименования переменной, нужно изменить её и в вызовах
          + ещё заметила: знак умножения "*" тоже надо пробелами выделить */
@@ -45,6 +43,3 @@ public class DepositCalculator {
         new DepositCalculator().resultDeposit();
     }
 }
-
-/* не знаю где написать, поэтому напишу здесь. Нужно удалить файл calculate_deposit.java из репозитория,
- тогда появится возможность запустить этот код */
