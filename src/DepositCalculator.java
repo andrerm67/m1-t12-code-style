@@ -10,10 +10,10 @@ public class DepositCalculator {
         return roundDecimalPlace(amount + amount * yearRate * period, 2);
     }
 
-    double roundDecimalPlace (double value, int places) {
-        double scale = Math.pow(10, places); // в scaLe - осталась большая буква "L" в середине слова
+    double roundDecimalPlace(double value, int places) {
+        double scale = Math.pow(10, places); // в scaLe - осталась большая буква "L" в середине слова + 
         /*после переименования переменной, нужно изменить её и в вызовах
-         + ещё заметила: знак умножения "*" тоже надо пробелами выделить */
+         + ещё заметила: знак умножения "*" тоже надо пробелами выделить + */
         return Math.round(value * scale) / scale;
     }
 
